@@ -1,6 +1,16 @@
 Hacker News API Wrapper
 =======================
 
+Installation
+------------
+
+.. code-block::
+
+    pip install hackernews-python
+
+Usage
+-----
+
 .. code-block::
 
     >>> from hackernews import HackerNews

@@ -1,10 +1,16 @@
 Hacker News API Wrapper
 =======================
 
-Usage:
-------
+.. code-block::
 
-    from hackernews import HackerNews
-    hn = HackerNews()
-    print(hn.top_stories())
+    >>> from hackernews import HackerNews
+    >>> hn = HackerNews()
+    >>> hn.top_stories()
+    [8422599, 8422087, 8422928, 8422581, 8423825...
+
+    >>> hn.user('pg')
+    {'delay': 2, 'id': 'pg', 'submitted': [7494555, 7494520, 749411...
+
+    >>> hn.item(7494555)['title'])
+    Hacker News API
 

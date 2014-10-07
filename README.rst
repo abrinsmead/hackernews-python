@@ -1,6 +1,9 @@
 Hacker News API Wrapper
 =======================
 
+Usage
+-----
+
 .. code-block::
 
     >>> from hackernews import HackerNews
@@ -13,4 +16,12 @@ Hacker News API Wrapper
 
     >>> hn.item(7494555)['title'])
     Hacker News API
+
+    >>> hn.max_item()
+    8424314
+
+    >>> hn.updates()
+    {'items': [8423690, 8424315, 8424299...], 'profiles': ['exampleuser',...]}
+
+
 

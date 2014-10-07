@@ -1,9 +1,6 @@
 Hacker News API Wrapper
 =======================
 
-Usage
------
-
 .. code-block::
 
     >>> from hackernews import HackerNews

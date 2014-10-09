@@ -9,7 +9,7 @@ def read(*paths):
 
 setup(
     name='hackernews-python',
-    version='0.1.0',
+    version='0.1.1',
     description='A Python wrapper for the official Hacker News API (v0)',
     long_description=(read('README.rst')),
     url='https://github.com/abrinsmead/hackernews-python',

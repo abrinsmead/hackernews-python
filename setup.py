@@ -2,6 +2,7 @@ import os
 
 from setuptools import setup
 
+
 def read(*paths):
     """Build a file path from *paths* and return the contents."""
     with open(os.path.join(*paths), 'r') as f:
@@ -9,9 +10,9 @@ def read(*paths):
 
 setup(
     name='hackernews-python',
-    version='0.1.1',
+    version='0.2.0',
     description='A Python wrapper for the official Hacker News API (v0)',
-    long_description=(read('README.rst')),
+    long_description=(read('README.rst') + '\n' + read('HISTORY.rst')),
     url='https://github.com/abrinsmead/hackernews-python',
     license='MIT',
     author='Alex Brinsmead',

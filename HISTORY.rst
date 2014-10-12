@@ -1,7 +1,12 @@
 Release History
 ---------------
 
-0.3.0 (2014-10-10)
+0.3.1 (2014-10-12)
+++++++++++++++++++
+- Fix README examples
+
+
+0.3.0 (2014-10-12)
 ++++++++++++++++++
 
 - Returns Item and User objects instead of dicts.

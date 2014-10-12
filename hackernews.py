@@ -3,6 +3,16 @@ from datetime import datetime
 import requests
 
 
+class Item():
+    def __init__(self, **entries):
+        self.__dict__.update(entries)
+
+
+class User():
+    def __init__(self, **entries):
+        self.__dict__.update(entries)
+
+
 class HackerNews():
 
     def __init__(self, timeout=5):
@@ -14,25 +24,28 @@ class HackerNews():
         return requests.request(method, url, timeout=self.timeout)
 
     def item(self, item_id):
-        r = self.request('GET', 'item/{item_id}.json'.format(item_id=item_id))
-        item = r.json()
+        uri = 'item/{item_id}.json'.format(item_id=item_id)
+        response = self.request('GET', uri)
+        item = response.json()
         item['time'] = datetime.fromtimestamp(item['time'])
-        return item
+        return Item(**item)
 
     def user(self, user_id):
-        r = self.request('GET', 'user/{user_id}.json'.format(user_id=user_id))
-        user = r.json()
+        uri = 'user/{user_id}.json'.format(user_id=user_id)
+        response = self.request('GET', uri)
+        user = response.json()
         user['created'] = datetime.fromtimestamp(user['created'])
-        return user
+        return User(**user)
 
     def top_stories(self):
-        r = self.request('GET', 'topstories.json')
-        return r.json()
+        response = self.request('GET', 'topstories.json')
+        return response.json()
 
     def max_item(self):
-        r = self.request('GET', 'maxitem.json')
-        return r.json()
+        response = self.request('GET', 'maxitem.json')
+        return response.json()
 
     def updates(self):
-        r = self.request('GET', 'updates.json')
-        return r.json()
+        response = self.request('GET', 'updates.json')
+        return response.json()
+

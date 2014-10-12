@@ -3,7 +3,7 @@ import unittest
 
 from requests.exceptions import ConnectTimeout
 
-from hackernews import HackerNews
+from hackernews import HackerNews, Item, User
 
 
 class HackerNewsTestCase(unittest.TestCase):
@@ -25,22 +25,26 @@ class HackerNewsTestCase(unittest.TestCase):
 
     def test_item_result_is_dict(self):
         item = self.hn.item(1)
-        self.assertIsInstance(item, dict)
+        self.assertIsInstance(item, Item)
 
     def test_user_result_is_dict(self):
         item = self.hn.user('pg')
-        self.assertIsInstance(item, dict)
+        self.assertIsInstance(item, User)
 
     def test_user_created_is_datetime(self):
         item = self.hn.user('pg')
-        self.assertIsInstance(item['created'], datetime)
+        self.assertIsInstance(item.created, datetime)
 
     def test_item_time_is_datetime(self):
         item = self.hn.item('1')
-        self.assertIsInstance(item['time'], datetime)
+        self.assertIsInstance(item.time, datetime)
 
     def test_raises_connection_timeout(self):
         hn = HackerNews(timeout=1)
         hn.url = "http://192.0.2.0"  # RFC 5735 TEST-NET-1
         self.assertRaises(ConnectTimeout, hn.top_stories)
+
+    def test_object_to_dict(self):
+        item = self.hn.item('1')
+        self.assertIsInstance(item.__dict__, dict)
 

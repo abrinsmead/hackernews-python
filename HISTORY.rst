@@ -1,6 +1,12 @@
 Release History
 ---------------
 
+0.3.0 (2014-10-10)
+++++++++++++++++++
+
+- Returns Item and User objects instead of dicts.
+
+
 0.2.0 (2014-10-10)
 ++++++++++++++++++
 

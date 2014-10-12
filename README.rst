@@ -18,17 +18,17 @@ Usage
     >>> hn.top_stories()
     [8422599, 8422087, 8422928, 8422581, 8423825...
 
-    >>> hn.user('pg')
-    {'delay': 2, 'id': 'pg', 'submitted': [7494555, 7494520, 749411...
-
-    >>> hn.user('pg').created
-    datetime.datetime(2006, 10, 9, 11, 21, 32)
-
     >>> hn.item(1).title
     'Y Combinator'
 
     >>> hn.item(1).time
     datetime.datetime(2006, 10, 9, 11, 21, 51)
+
+    >>> hn.user('pg').created
+    datetime.datetime(2006, 10, 9, 11, 21, 32)
+
+    >>> hn.user('pg').karma
+    155040
 
     >>> hn.max_item()
     8424314

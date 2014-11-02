@@ -27,7 +27,8 @@ class HackerNews():
         uri = 'item/{item_id}.json'.format(item_id=item_id)
         response = self.request('GET', uri)
         item = response.json()
-        item['time'] = datetime.fromtimestamp(item['time'])
+        if item.get('time'):
+            item['time'] = datetime.fromtimestamp(item['time'])
         return Item(**item)
 
     def user(self, user_id):

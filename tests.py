@@ -37,7 +37,8 @@ class HackerNewsTestCase(unittest.TestCase):
 
     def test_item_time_is_datetime(self):
         item = self.hn.item('1')
-        self.assertIsInstance(item.time, datetime)
+        if item.get('time'):
+            self.assertIsInstance(item.time, datetime)
 
     def test_raises_connection_timeout(self):
         hn = HackerNews(timeout=1)

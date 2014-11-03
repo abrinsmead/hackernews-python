@@ -1,6 +1,12 @@
 Release History
 ---------------
 
+
+0.3.1 (2014-11-2)
++++++++++++++++++
+- Fix issue with time attribute and deleted posts
+
+
 0.3.1 (2014-10-12)
 ++++++++++++++++++
 - Fix README examples

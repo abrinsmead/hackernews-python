@@ -2,7 +2,6 @@ import os
 
 from setuptools import setup
 
-import hackernews
 
 
 def read(*paths):

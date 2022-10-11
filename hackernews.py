@@ -45,11 +45,19 @@ class HackerNews():
         response = self.request('GET', 'topstories.json')
         return response.json()
 
+    def newstories(self):
+        response = self.request('GET', 'newstories.json')
+        return response.json()
+
+    def last_newstories(self):
+        return self.newstories()[0]
+
     def max_item(self):
         response = self.request('GET', 'maxitem.json')
         return response.json()
 
+    
     def updates(self):
         response = self.request('GET', 'updates.json')
         return response.json()
-
+    

@@ -2,7 +2,6 @@ import os
 
 from setuptools import setup
 
-import hackernews
 
 
 def read(*paths):
@@ -12,10 +11,10 @@ def read(*paths):
 
 setup(
     name='hackernews-python',
-    version=hackernews.__version__,
+    version='0.1',
     description='Python wrapper for the official Hacker News API (v0)',
     long_description=(read('README.rst') + '\n' + read('HISTORY.rst')),
-    url='https://github.com/abrinsmead/hackernews-python',
+    url='https://github.com/MahdiAw/hackernews-python',
     license='MIT',
     author='Alex Brinsmead',
     author_email='alex.brinsmead@dataloft.com',
